@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/index.css" />
+    <title>Hugh McKenna - Full Stack Developer</title>
+    <script type="module" src="/scripts/index.ts"></script>
+  </head>
+  <body>
+    <main className="relative min-h-screen bg-white">
+      <div className="relative">
+        <div className="relative">
+          <div className="absolute inset-0">
+            <picture>
+              <source
+                media="(max-width: 920px)"
+                type="image/webp"
+                src="images/header-mobile.webp"
+              />
+              <source
+                media="(min-width: 921px)"
+                type="image/webp"
+                src="images/header.webp"
+              />
+              <img
+                className="h-full w-full object-cover"
+                src="images/header.webp"
+                alt="Brush stroke drawing of garden path"
+              />
+            </picture>
+            <div className="absolute inset-0 mix-blend-multiply"></div>
+          </div>
+          <div className="relative py-32 lg:p-96">
+            <h1
+              className="relative text-center font-mono text-6xl font-extrabold tracking-tight before:absolute before:-inset-1 before:top-0 before:left-0 before:block before:h-full before:w-full before:skew-y-2 before:bg-green-500 before:opacity-60 before:content-[''] sm:text-8xl lg:text-9xl"
+            >
+              <span className="relative block text-white drop-shadow-lg">
+                HuGh mcKenna
+              </span>
+            </h1>
+            <p
+              className="relative mx-auto mt-6 max-w-lg rounded-l-xl bg-contain text-center text-xl text-white before:absolute before:inset-1 before:top-0 before:left-0 before:block before:h-full before:w-full before:-skew-y-1 before:rounded-sm before:bg-sky-400 before:opacity-80 before:content-[''] sm:max-w-3xl"
+            >
+              <span
+                className="relative block font-sans text-2xl text-white drop-shadow-lg"
+              >
+                Full stack developer
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          className="my-4 mx-auto max-w-5xl rounded-sm border-2 py-2 px-4 sm:px-6 lg:p-16"
+        >
+          <div className="mt-6 flex flex-wrap justify-center gap-8">
+            <h2 className="text-center font-display text-5xl">I Use</h2>
+            <p className="text-center font-sans">
+              This is my stack day to day for the most part, have dabbled in PHP
+              & C# and SQL when called upon but largely I use tech closely
+              related to Javascript.
+            </p>
+          </div>
+          <ul
+            className="mt-6 flex flex-wrap justify-center gap-8 font-mono text-4xl"
+          >
+            <li className="text-blue-500">TypeScriPT</li>
+            <li className="text-green-500">NodeJS</li>
+            <li className="text-cyan-500">ReAct</li>
+            <li className="text-amber-500">AWS</li>
+            <li className="text-pink-600">noSqL</li>
+          </ul>
+        </div>
+
+        <div
+          className="my-4 mx-auto max-w-5xl rounded-sm border-2 py-2 px-4 sm:px-6 lg:p-16"
+        >
+          <div className="mt-6 flex flex-wrap justify-center gap-8">
+            <h2 className="text-center font-display text-5xl">
+              My Work With Others
+            </h2>
+            <p className="text-center font-sans">
+              Have spent much of my career working in Ecommerce, from working
+              with real time back end systems to making some rather lovely store
+              fronts.
+            </p>
+          </div>
+          <ul
+            className="mt-6 flex flex-wrap justify-center gap-8 font-mono text-4xl"
+          >
+            <li className="text-red-500">MagENto</li>
+            <li className="text-sky-500">agILe</li>
+            <li className="text-lime-500">ShOPifY</li>
+            <li className="text-yellow-500">TdD</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
