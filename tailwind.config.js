@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./src/**/*.{html,ts}","./src/index.html"],
+    content: ["./**/*.html"],
     theme: {
         screens: {
             sm: "480px",
@@ -8,10 +8,15 @@ module.exports = {
             xl: "1440px",
         },
         fontFamily: {
-            display: ["Stardos Stencil", "serif"],
-            sans: ["Roboto Condensed", "sans-serif"]
+            sans: ["Radio Canada", "sans-serif"],
+            serif: ["Bree Serif", "serif"],
+            mono: ["Major Mono Display", "Menlo", "monospace"],
         },
-        extend: {},
+        extend: {
+            fontFamily: {
+                display: ["Beth Ellen", "serif"],
+            },
+        },
     },
     plugins: [],
 }
