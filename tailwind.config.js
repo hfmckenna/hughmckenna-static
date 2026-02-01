@@ -1,22 +1,9 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./**/*.html"],
+    // This tells Tailwind to look at ANY .html file in your project
+    content: ["./**/*.{html,js}"],
     theme: {
-        screens: {
-            sm: "480px",
-            md: "768px",
-            lg: "976px",
-            xl: "1440px",
-        },
-        fontFamily: {
-            sans: ["Radio Canada", "sans-serif"],
-            serif: ["Bree Serif", "serif"],
-            mono: ["Major Mono Display", "Menlo", "monospace"],
-        },
-        extend: {
-            fontFamily: {
-                display: ["Beth Ellen", "serif"],
-            },
-        },
+        extend: {},
     },
     plugins: [],
 }
