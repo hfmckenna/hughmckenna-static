@@ -2,9 +2,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hugh McKenna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&display=swap');
 
+        :root {
+            --c-red: #DC2626;
+            --c-blue: #1D4ED8;
+            --c-yellow: #FACC15;
+            --c-black: #171717;
+            --c-white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--c-white);
+            color: var(--c-black);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .border-hard { border: 4px solid var(--c-black); }
+        .shadow-hard-sm { box-shadow: 6px 6px 0px 0px var(--c-black); }
+        .hover-lift:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0px 0px var(--c-black); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<header class="p-6 md:p-12 border-b-8 border-neutral-900 bg-neutral-100">
+    <nav class="max-w-4xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="font-bold text-xl md:text-2xl hover:text-red-600 transition">
+            HUGH<span class="text-red-600">McKENNA</span>
+        </a>
+
+        <div class="flex gap-4">
+            <a href="index.html" class="font-bold hover:underline decoration-4 decoration-yellow-400 underline-offset-4">HOME</a>
+            <span class="opacity-50">/</span>
+            <span class="font-bold bg-black text-white px-2">BLOG</span>
+        </div>
+    </nav>
+</header>
+
+<main class="flex-grow max-w-4xl mx-auto w-full p-6 md:p-12">
+
+    <h1 class="text-6xl md:text-8xl mb-12 tracking-tighter">
+        WRITING
+    </h1>
+
+    <div class="space-y-6">
+
+        <a href="#" class="block group">
+            <article class="border-hard p-6 bg-white transition-all duration-200 shadow-hard-sm hover-lift relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-red-600"></div>
+                <div class="pl-4">
+                    <span class="text-xs font-bold text-neutral-500 mb-2 block">FEB 2026</span>
+                    <h2 class="text-2xl md:text-3xl mb-2 group-hover:text-red-600 transition-colors">
+                        Strangling the Monolith
+                    </h2>
+                    <p class="text-sm md:text-base text-neutral-700 max-w-prose">
+                        Strategies for migrating legacy .NET systems to event-driven architectures on AWS without downtime.
+                    </p>
+                </div>
+            </article>
+        </a>
+
+        <a href="#" class="block group">
+            <article class="border-2 border-black p-6 bg-white transition-all duration-200 shadow-hard-sm hover-lift relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-blue-700"></div>
+                <div class="pl-4">
+                    <span class="text-xs font-bold text-neutral-500 mb-2 block">JAN 2026</span>
+                    <h2 class="text-2xl md:text-3xl mb-2 group-hover:text-blue-700 transition-colors">
+                        Domain Driven Design in Practice
+                    </h2>
+                    <p class="text-sm md:text-base text-neutral-700 max-w-prose">
+                        How we define boundaries and context maps when integrating over 100 different sellers.
+                    </p>
+                </div>
+            </article>
+        </a>
+
+        <a href="#" class="block group">
+            <article class="border-2 border-black p-6 bg-white transition-all duration-200 shadow-hard-sm hover-lift relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-yellow-400"></div>
+                <div class="pl-4">
+                    <span class="text-xs font-bold text-neutral-500 mb-2 block">DEC 2025</span>
+                    <h2 class="text-2xl md:text-3xl mb-2 group-hover:text-yellow-600 transition-colors">
+                        Why I Write Services in Go
+                    </h2>
+                    <p class="text-sm md:text-base text-neutral-700 max-w-prose">
+                        Moving from TypeScript to Go for high-throughput stream processing. A look at performance and simplicity.
+                    </p>
+                </div>
+            </article>
+        </a>
+
+    </div>
+</main>
+
+<footer class="bg-black text-white p-6 text-center border-t-8 border-red-600 mt-12">
+    <p class="font-mono text-xs">
+        &copy; <span id="year"></span> Hugh McKenna
+    </p>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

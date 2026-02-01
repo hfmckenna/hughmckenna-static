@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Template - Hugh McKenna</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&display=swap');
+
+    :root {
+      --c-red: #DC2626;
+      --c-blue: #1D4ED8;
+      --c-yellow: #FACC15;
+      --c-black: #171717;
+      --c-white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: var(--c-white);
+      color: var(--c-black);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
+    }
+
+    /* Utilities */
+    .border-hard { border: 4px solid var(--c-black); }
+    .border-hard-sm { border: 2px solid var(--c-black); }
+    .shadow-hard { box-shadow: 8px 8px 0px 0px var(--c-black); }
+
+    /* Custom Checkbox Style for Ingredients */
+    .ingredient-check {
+      appearance: none;
+      width: 1.25em;
+      height: 1.25em;
+      border: 2px solid var(--c-black);
+      background-color: white;
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+    }
+    .ingredient-check::before {
+      content: "";
+      width: 0.65em;
+      height: 0.65em;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-color: var(--c-red);
+    }
+    .ingredient-check:checked::before {
+      transform: scale(1);
+    }
+    .ingredient-check:checked + span {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<header class="p-6 md:p-12 border-b-8 border-neutral-900 bg-neutral-100">
+  <nav class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <a href="index.html" class="font-bold text-xl md:text-2xl hover:text-blue-700 transition">
+      HUGH<span class="text-blue-700">McKENNA</span>
+    </a>
+    <div class="flex gap-4 text-sm md:text-base">
+      <a href="index.html" class="font-bold hover:underline decoration-4 decoration-yellow-400 underline-offset-4">HOME</a>
+      <span class="opacity-50">/</span>
+      <span class="font-bold bg-black text-white px-2">RECIPES</span>
+    </div>
+  </nav>
+</header>
+
+<main class="flex-grow max-w-6xl mx-auto w-full p-6 md:p-12">
+
+  <header class="mb-12">
+    <h1 class="text-5xl md:text-7xl mb-6 tracking-tighter leading-none break-words">
+      INDUSTRIAL<br><span class="text-yellow-500">SOURDOUGH</span>
+    </h1>
+
+    <div class="border-l-8 border-red-600 pl-6 py-2 max-w-3xl">
+      <p class="text-lg md:text-xl font-medium leading-relaxed">
+        A high-hydration recipe engineered for home ovens. No kneading required, just time and temperature control. Results in a blistered crust and open crumb structure.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-4 mt-8">
+      <div class="bg-black text-white px-4 py-2 font-bold shadow-hard text-sm md:text-base">
+        PREP: 24 HRS
+      </div>
+      <div class="bg-white border-hard-sm px-4 py-2 font-bold shadow-hard text-sm md:text-base">
+        COOK: 45 MIN
+      </div>
+      <div class="bg-blue-700 text-white px-4 py-2 font-bold shadow-hard text-sm md:text-base">
+        YIELD: 2 LOAVES
+      </div>
+    </div>
+  </header>
+
+  <hr class="border-black border-2 mb-12" />
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+    <aside class="lg:col-span-4 sticky top-6">
+      <div class="bg-neutral-100 border-hard p-6 shadow-hard relative">
+        <div class="absolute -top-4 left-4 bg-yellow-400 border-hard-sm px-3 py-1 text-xs font-bold">
+          INPUTS
+        </div>
+
+        <h2 class="text-2xl mb-6">INGREDIENTS</h2>
+
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <input type="checkbox" class="ingredient-check mt-1">
+            <span>800g Strong White Bread Flour</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <input type="checkbox" class="ingredient-check mt-1">
+            <span>200g Whole Wheat Flour</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <input type="checkbox" class="ingredient-check mt-1">
+            <span>750g Water (Room Temp)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <input type="checkbox" class="ingredient-check mt-1">
+            <span>200g Active Sourdough Starter</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <input type="checkbox" class="ingredient-check mt-1">
+            <span>20g Fine Sea Salt</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="lg:col-span-8">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-4xl text-blue-700">EXECUTION</h2>
+        <div class="flex-grow h-1 bg-black"></div>
+      </div>
+
+      <div class="space-y-10">
+
+        <div class="group relative pl-12 md:pl-16">
+          <div class="absolute left-0 top-0 text-5xl md:text-6xl font-black text-neutral-200 group-hover:text-red-600 transition-colors select-none font-sans z-0">
+            01
+          </div>
+          <div class="relative z-10">
+            <h3 class="text-xl font-bold mb-2">Autolyse</h3>
+            <p class="text-neutral-700 leading-relaxed">
+              Mix the flour and water in a large bowl until no dry flour remains. Cover with a damp cloth and let rest for 1 hour. This allows the gluten structure to begin forming before the fermentation begins.
+            </p>
+          </div>
+        </div>
+
+        <div class="group relative pl-12 md:pl-16">
+          <div class="absolute left-0 top-0 text-5xl md:text-6xl font-black text-neutral-200 group-hover:text-red-600 transition-colors select-none font-sans z-0">
+            02
+          </div>
+          <div class="relative z-10">
+            <h3 class="text-xl font-bold mb-2">Inoculation & Salt</h3>
+            <p class="text-neutral-700 leading-relaxed">
+              Add the sourdough starter and salt. Pinch the dough with your fingers to incorporate the new ingredients. Perform a "Rubaud" mix for 5 minutes until the dough becomes smooth and extensible.
+            </p>
+          </div>
+        </div>
+
+        <div class="group relative pl-12 md:pl-16">
+          <div class="absolute left-0 top-0 text-5xl md:text-6xl font-black text-neutral-200 group-hover:text-red-600 transition-colors select-none font-sans z-0">
+            03
+          </div>
+          <div class="relative z-10">
+            <h3 class="text-xl font-bold mb-2">Bulk Fermentation</h3>
+            <p class="text-neutral-700 leading-relaxed">
+              Transfer to a clean container. Perform 4 sets of "Stretch and Folds" spaced 30 minutes apart. After the last fold, let the dough rest until it has increased in volume by 50% (approx 3-4 hours depending on temperature).
+            </p>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 mt-3 text-sm">
+              <strong>Note:</strong> Look for bubbles on the surface and a jiggly texture.
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative pl-12 md:pl-16">
+          <div class="absolute left-0 top-0 text-5xl md:text-6xl font-black text-neutral-200 group-hover:text-red-600 transition-colors select-none font-sans z-0">
+            04
+          </div>
+          <div class="relative z-10">
+            <h3 class="text-xl font-bold mb-2">Bake</h3>
+            <p class="text-neutral-700 leading-relaxed">
+              Preheat dutch oven to 250°C. Score the dough. Bake covered for 20 minutes. Remove lid, lower temp to 230°C and bake for another 20-25 minutes until dark golden brown.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="bg-black text-white p-6 md:p-12 text-center mt-12 border-t-8 border-blue-700">
+  <p class="font-mono text-xs md:text-sm">
+    &copy; <span id="year"></span> Hugh McKenna
+  </p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
