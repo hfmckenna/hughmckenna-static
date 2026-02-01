@@ -1,147 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/style/index.css" />
-  <title>Hugh McKenna - Full Stack Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hugh McKenna - Software Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&display=swap');
+
+    :root {
+      --c-red: #DC2626;   /* Primary Red */
+      --c-blue: #1D4ED8;  /* Primary Blue */
+      --c-yellow: #FACC15;/* Primary Yellow */
+      --c-black: #171717; /* Neutral 900 */
+      --c-white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: var(--c-white);
+      color: var(--c-black);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
+    }
+
+    /* Diagonal stripes pattern */
+    .bg-stripes {
+      background: repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 10px,
+              #171717 10px,
+              #171717 12px
+      );
+    }
+
+    /* Hard layout utilities */
+    .border-hard {
+      border: 4px solid var(--c-black);
+    }
+
+    .shadow-hard {
+      box-shadow: 8px 8px 0px 0px var(--c-black);
+    }
+    @media (min-width: 768px) {
+      .shadow-hard {
+        box-shadow: 12px 12px 0px 0px var(--c-black);
+      }
+    }
+
+    .shadow-hard-sm {
+      box-shadow: 4px 4px 0px 0px var(--c-black);
+    }
+    @media (min-width: 768px) {
+      .shadow-hard-sm {
+        box-shadow: 6px 6px 0px 0px var(--c-black);
+      }
+    }
+
+    /* Blend modes for overlapping shapes */
+    .blend-multiply {
+      mix-blend-mode: multiply;
+    }
+  </style>
 </head>
-<body>
-<main class="relative min-h-screen bg-white">
-  <section class="relative">
-    <div class="absolute inset-0">
-      <picture>
-        <source
-          media="(max-width: 920px)"
-          type="image/webp"
-          src="images/header-mobile.webp"
-        />
-        <source
-          media="(min-width: 921px)"
-          type="image/webp"
-          src="images/header.webp"
-        />
-        <img
-          class="h-full w-full object-cover"
-          src="images/header.webp"
-          alt="Brush stroke drawing of garden path"
-        />
-      </picture>
-      <div class="absolute inset-0 mix-blend-multiply"></div>
-    </div>
-    <div class="relative py-32 xl:p-96">
-      <h1
-        class="relative text-center font-display text-6xl xl:text-8xl lg:leading-relaxed tracking-tight before:absolute before:-inset-1 before:top-0 before:left-0 before:block before:h-full before:w-full before:skew-y-2 before:bg-blue-500 before:content-['']"
-      >
-              <span class="relative block text-white drop-shadow-lg">
-                Hugh McKenna
-              </span>
-      </h1>
-      <p
-        class="relative mx-auto mt-6 max-w-lg rounded-l-xl bg-contain text-center text-xl before:absolute before:inset-1 before:top-0 before:left-0 before:block before:h-full before:w-full before:-skew-y-1 before:rounded-sm before:bg-yellow-400 before:content-[''] sm:max-w-3xl"
-      >
-              <span
-                class="relative block font-sans text-2xl drop-shadow-lg"
-              >
-                Full stack developer
-              </span>
-      </p>
-    </div>
-  </section>
-  <section class="flex justify-center items-center">
-    <div class="p-8">
-      <a href="mailto: 1kmqsqz1y@mozmail.com">
-        <img width="120" loading="lazy" src="./images/email.png"
-             alt="Email Logo">
-      </a>
-    </div>
-    <div class="p-8">
-      <a href="https://github.com/hfmckenna" target="_blank">
-        <img width="120" loading="lazy"
-             src="./images/github-mark.png"
-             alt="Github Logo">
-      </a>
-    </div>
-    <div class="p-8">
-      <a href="https://www.linkedin.com/in/hugh-mckenna-b1800a118/" target="_blank">
-        <img width="140"
-             loading="lazy"
-             src="./images/LI-In-Bug.png"
-             alt="LinkedIn Logo">
-      </a>
-    </div>
-  </section>
-  <section class="flex flex-col lg:flex-row lg:gap-8 md:px-8">
-    <div class="my-4 mx-auto max-w-5xl w-full lg:w-1/2 rounded-xl lg:border-4">
-      <div class="bg-white bg-opacity-95 py-2 px-4 sm:px-6 lg:p-8 h-full">
-        <div class="mt-6">
-          <h2 class="text-center font-display text-4xl mb-4 flex items-center justify-center">
-            <div
-              class="relative inline-block rounded-full h-32 w-32 overflow-hidden border-2 border-black w-full mx-4">
-              <img loading="lazy" class="absolute top-0 left-0 w-full" src="/images/keys.png"
-                   alt="Keyboard illustration"></div>
-            I Use
-          </h2>
-          <p class="font-sans">
-            This is my stack day to day, have dabbled in PHP
-            & C# and SQL when called upon but I'm primarily a Javascript dev.
+<body class="overflow-x-hidden w-full">
+
+<header class="relative min-h-[80vh] md:min-h-screen w-full flex flex-col justify-between border-b-8 border-neutral-900 overflow-hidden">
+
+  <div class="absolute inset-0 z-0 pointer-events-none opacity-90 overflow-hidden">
+    <div class="absolute top-[-5%] left-[10%] md:left-[20%] w-[150px] md:w-[400px] h-[150%] bg-red-600 transform -rotate-[25deg] border-r-4 md:border-r-8 border-neutral-900"></div>
+    <div class="absolute bottom-[-5%] right-[-10%] md:right-[10%] w-[250px] h-[250px] md:w-[600px] md:h-[600px] bg-blue-700 rounded-full mix-blend-multiply opacity-90 border-4 border-neutral-900"></div>
+    <div class="absolute top-[15%] right-[-20%] md:right-[-10%] w-[300px] md:w-[800px] h-[60px] md:h-[100px] bg-yellow-400 transform -rotate-[15deg] border-y-4 border-neutral-900 z-10"></div>
+    <div class="absolute top-0 left-4 md:left-10 w-2 md:w-4 h-full bg-neutral-900"></div>
+    <div class="absolute top-[50%] md:top-[60%] left-0 w-full h-1 md:h-2 bg-neutral-900"></div>
+  </div>
+
+  <div class="relative z-20 p-4 md:p-12 flex flex-col h-full justify-between">
+
+    <nav class="flex flex-col md:flex-row justify-between items-start md:items-start gap-4">
+      <div class="bg-neutral-900 text-white p-3 md:p-4 shadow-hard-sm transform -rotate-1 hover:rotate-0 transition w-full md:w-auto text-center md:text-left">
+        <span class="block text-sm">GitHub - hfmckenna</span>
+      </div>
+      <div class="flex flex-col gap-2 items-end w-full md:w-auto">
+        <a href="https://blog.hughmckenna.dev" class="bg-white border-2 border-black px-3 py-2 text-sm md:text-base hover:bg-blue-600 hover:text-white font-bold shadow-hard-sm transition w-full md:w-auto text-center">Blog</a>
+      </div>
+    </nav>
+
+    <div class="mt-12 md:mt-0 max-w-4xl">
+      <div class="bg-white inline-block border-hard p-4 md:p-10 shadow-hard mb-6 max-w-full">
+        <h1 class="text-5xl sm:text-6xl md:text-8xl tracking-tighter leading-[0.9] break-words">
+          HUGH<br>
+          <span class="text-red-600">McKENNA</span>
+        </h1>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div class="bg-blue-700 text-white p-4 border-hard shadow-hard-sm w-full md:max-w-sm">
+          <h2 class="text-xl md:text-2xl mb-2">Software Developer</h2>
+          <p class="text-sm leading-tight">
+            Working on the web with cloud native technologies and fond of the functional.
           </p>
         </div>
-        <ul
-          class="mt-6 flex flex-wrap justify-center gap-4 text-2xl"
-        >
-          <li>Typescript</li>
-          <li>|</li>
-          <li>NodeJS</li>
-          <li>|</li>
-          <li>React</li>
-          <li>|</li>
-          <li>AWS</li>
-          <li>|</li>
-          <li>TDD</li>
-          <li>|</li>
-          <li>NoSQL</li>
-          <li>|</li>
-          <li>Vue</li>
-        </ul>
-      </div>
-    </div>
-    <div class="my-4 mx-auto max-w-5xl w-full lg:w-1/2 rounded-xl lg:border-4">
-      <div class="bg-white bg-opacity-95 py-2 px-4 sm:px-6 lg:p-16 h-full">
-        <div class="mt-6">
-          <h2 class="text-center font-display text-4xl mb-4 flex items-center justify-center">
-            <div
-              class="relative inline-block rounded-full h-32 w-32 overflow-hidden border-2 border-black w-full mx-4">
-              <img loading="lazy" class="absolute top-0 left-0 w-full" src="/images/pens.png"
-                   alt="Whiteboard pens in red, blue and yellow illustration"></div>
-            Work
-          </h2>
-          <p class="font-sans">
-            My experience is in customer facing websites, everything from agency work using platforms to corporate
-            product
-            teams.
+
+        <div class="bg-yellow-400 text-black p-4 border-hard shadow-hard-sm w-full md:max-w-md transform md:translate-y-4">
+          <p class="font-bold text-base md:text-lg leading-tight">
+            "Good judgement is the result of experience… Experience is the result of bad judgement."
           </p>
         </div>
-        <ul
-          class="mt-6 flex flex-wrap justify-center gap-4 text-2xl"
-        >
-          <li>Agile</li>
-          <li>|</li>
-          <li>Ecommerce</li>
-          <li>|</li>
-          <li>Front End</li>
-          <li>|</li>
-          <li>Back End</li>
-          <li>|</li>
-          <li>Cloud Native</li>
-        </ul>
       </div>
     </div>
-  </section>
+
+    <div
+            onclick="document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });"
+            class="hidden md:block self-center animate-bounce bg-white border-2 border-black p-2 rounded-full z-20 cursor-pointer hover:bg-yellow-400 transition"
+            title="Scroll Down"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="max-w-7xl mx-auto p-4 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+  <aside class="lg:col-span-4 space-y-12">
+    <section>
+      <h2 class="text-3xl md:text-4xl mb-6 border-b-4 border-red-600 inline-block">ABOUT</h2>
+      <div class="bg-neutral-100 p-4 md:p-6 border-l-4 border-black">
+        <p class="mb-4 text-sm md:text-base">
+          One time sound engineer and hacker of music electronics. More recently I've worked for Ecommerce sites and online marketplaces in the North West of England.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-3xl md:text-4xl mb-6 border-b-4 border-yellow-400 inline-block">Stack</h2>
+      <div class="bg-stripes p-1 border-2 border-black">
+        <div class="bg-white p-4">
+          <ul class="list-square pl-4 space-y-2 text-sm">
+            <li>Building interfaces in <span class="bg-purple-200 px-1">React</span> </li>
+            <li>Applications made with <span class="bg-blue-200 px-1">Typescript</span> </li>
+            <li>Data solutions using serverless tools on <span class="bg-yellow-200 px-1">AWS</span></li>
+            <li>Creating services on <span class="bg-gray-100 px-1">Kubernetes</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-3xl md:text-4xl mb-6 border-b-4 border-blue-700 inline-block">EDUCATION</h2>
+      <div class="border-2 border-black p-4 shadow-hard-sm">
+        <h3 class="text-lg md:text-xl">B.A. (Hons) Sound Technology</h3>
+        <p class="text-sm mt-2 text-neutral-600">Liverpool Institute For Performing Arts, 2009 </p>
+      </div>
+    </section>
+  </aside>
+
+  <div class="lg:col-span-8">
+    <h2 class="text-4xl md:text-6xl mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-neutral-600 stroke-black" style="-webkit-text-stroke: 1px black;">EXPERIENCE</h2>
+
+    <div class="space-y-12 relative">
+      <div class="absolute left-0 top-4 bottom-0 w-1 bg-black hidden md:block"></div>
+
+      <article class="relative md:pl-12">
+        <div class="absolute left-[-6px] top-6 w-4 h-4 bg-red-600 border-2 border-black hidden md:block"></div>
+
+        <div class="bg-white border-hard p-4 md:p-6 shadow-hard hover:translate-x-1 hover:-translate-y-1 transition duration-200">
+          <div class="flex flex-wrap justify-between items-baseline mb-4 border-b-2 border-neutral-200 pb-2">
+            <h3 class="text-xl md:text-2xl font-black">Full Stack Developer <span class="text-red-600 block md:inline">@ AFerry</span></h3>
+            <span class="font-bold bg-black text-white px-2 py-1 text-xs mt-2 md:mt-0">2022 - Now </span>
+          </div>
+          <p class="mb-4 text-sm font-medium">
+            Leading work on core domain features, integrating 100+ sellers for up to 100,000 customers/day.
+            Strangling a .NET legacy system and replacing it with an event-driven architecture on AWS.
+          </p>
+          <div class="bg-neutral-100 p-3 text-xs border border-neutral-300">
+            <strong>Tech:</strong> Typescript, NodeJS, CQRS, Lambda, DynamoDB, Kinesis, S3, DDD
+          </div>
+        </div>
+      </article>
+
+      <article class="relative md:pl-12">
+        <div class="absolute left-[-6px] top-6 w-4 h-4 bg-blue-700 border-2 border-black hidden md:block"></div>
+
+        <div class="bg-white border-2 border-black p-4 md:p-6 shadow-hard-sm">
+          <div class="flex flex-wrap justify-between items-baseline mb-4">
+            <h3 class="text-lg md:text-xl font-bold">Front End Developer <span class="text-blue-700 block md:inline">@ AO</span></h3>
+            <span class="font-bold text-neutral-500 text-xs mt-1 md:mt-0">2021 - 2022 </span>
+          </div>
+          <ul class="list-disc pl-5 space-y-2 text-sm mb-4">
+            <li>Worked on product team providing real-time personalised incentives via ML. </li>
+            <li>Built React portal for data engineers. </li>
+            <li>Maintained websocket transport layer backplaned with Redis. </li>
+          </ul>
+          <div class="flex gap-2 flex-wrap">
+            <span class="border border-black px-1 text-[10px]">React</span>
+            <span class="border border-black px-1 text-[10px]">Kafka</span>
+            <span class="border border-black px-1 text-[10px]">Websockets</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="relative md:pl-12">
+        <div class="absolute left-[-6px] top-6 w-4 h-4 bg-yellow-400 border-2 border-black hidden md:block"></div>
+
+        <div class="bg-white border-2 border-black p-4 md:p-6 shadow-hard-sm">
+          <div class="flex flex-wrap justify-between items-baseline mb-4">
+            <h3 class="text-lg md:text-xl font-bold">Front End Developer <span class="text-yellow-600 block md:inline">@ Velstar</span></h3>
+            <span class="font-bold text-neutral-500 text-xs mt-1 md:mt-0">2019 - 2021 </span>
+          </div>
+          <p class="text-sm mb-3">
+            Client facing role for brands like Avon and Castore. Led Shopify theme builds from discovery to hand over.
+          </p>
+          <div class="bg-yellow-50 text-xs p-2 inline-block border border-yellow-200">
+            Shopify, Liquid, HTML/CSS/JS
+          </div>
+        </div>
+      </article>
+
+      <article class="relative md:pl-12 opacity-80">
+        <div class="absolute left-[-6px] top-6 w-4 h-4 bg-white border-2 border-black hidden md:block"></div>
+
+        <div class="bg-white border border-neutral-400 p-4 md:p-6 border-l-4 border-l-black">
+          <div class="flex flex-wrap justify-between items-baseline mb-2">
+            <h3 class="text-lg font-bold">Full Stack Developer @ Studiocare</h3>
+            <span class="text-xs">2019 </span>
+          </div>
+          <p class="text-sm">
+            Migrated Magento 1 to 2. Implemented audio hire booking system (PHP/MySQL).
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </main>
-<footer class="bg-black py-4">
-  <span class="text-white font-display p-2"><a href="https://crowandapricot.co.uk/">Hugh McKenna 2023, Image courtesy of Crow & Apricot</span>
+
+<footer class="bg-black text-white p-6 md:p-12 mt-20 text-center">
+  <div class="w-12 h-1 bg-red-600 mx-auto mb-4"></div>
+  <p class="font-mono text-xs md:text-sm">
+    &copy; <span id="year"></span> Hugh McKenna. Built with Constructivist Principles.
+  </p>
 </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
